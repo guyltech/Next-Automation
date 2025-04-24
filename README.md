@@ -1,2 +1,18 @@
-# Next-Automation
-Automated UI tests for Next.co.uk using Python, Playwright, Pytest, and Allure.
+# Next.co.uk Automation Project
+
+This project contains end-to-end UI automation tests for [Next.co.uk](https://www.next.co.uk/), built using:
+
+- ✅ Python
+- ✅ Playwright
+- ✅ Pytest
+- ✅ Allure for test reporting
+
+## Test Coverage
+
+- Login flow  
+- Add to cart  
+- Checkout process  
+
+## Setup & Run
+
+Instructions coming soon...
