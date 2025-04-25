@@ -1,4 +1,5 @@
 # Next.co.uk Automation Project
+⚠️ This project is a work in progress. More tests and improvements coming soon.
 
 This project contains end-to-end UI automation tests for [Next.co.uk](https://www.next.co.uk/), built using:
 
