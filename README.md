@@ -1,9 +1,9 @@
 # Next.co.uk Automation Project
 ⚠️ This project is a work in progress. More tests and improvements coming soon.
 
-In this project, I'm building a full test automation infrastructure using the Page Object Model, including running reports. 
+In this project, I am building a full test automation infrastructure using the Page Object Model (POM), including running reports. 
 
-It contains end-to-end UI automation tests for [Next.co.uk](https://www.next.co.uk/), built using:
+It contains end-to-end UI automation tests for [Next.co.uk](https://www.next.co.uk/),  built using:
 
 - ✅ Python
 - ✅ Playwright
