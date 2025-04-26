@@ -1,23 +1,34 @@
-# Next.co.uk Automation Project
+# 🌐 Next Website - Automation Testing Project 💻
 
-⚠️ This project is a work in progress. More tests and improvements coming soon.
 
-This project contains end-to-end UI automation tests for [Next.co.uk](https://www.next.co.uk/), built using:
+🛠️ This project is a work in progress. More tests and improvements coming soon.
 
-- ✅ Python
-- ✅ Playwright
-- ✅ Pytest
-- ✅ Allure for test reporting
 
-## Test Coverage
+⭐ Automated testing project for the real shopping site [Next.co.uk](https://www.next.co.uk/) ⭐
 
-- Login flow  
-- Add to cart  
-- Checkout process  
 
-## Setup & Run
+## 📑 Technologies & Skills & Features
+| Technologies      | Description |
+| ----------- | ----------- |
+| **Python:**      | The project is developed using Python, providing a robust and widely used programming language for automation.       |
+| **PyTest:**   | PyTest is used as the testing framework, offering powerful test configuration options, parallel execution, and detailed reporting.        |
+| **Playwright:**   | The project uses Playwright for automating browser interactions.        |
+| **Page Object Model (POM):**   | The project follows the POM design pattern, enhancing test maintainability and reusability by separating page elements and actions.        |
+| **Allure Reports:**   | Test results are documented using Allure Reports, providing a clear and interactive visualization of test execution.        |
 
+    
+## ✅ Test Coverage
+- Home Page functionality
+- Login flow
+- Registration flow
+- Product search
+- Header navigation
+- Sorting and filtering on search results
+
+
+## 🚀 Setup & Run
 Instructions coming soon...
+
 
 ## 📁 Project Structure
 ```
@@ -47,5 +58,6 @@ project_root/
 ├── pytest.ini
 ├── requirements.txt
 └── README.md
+```
 
-
+## Built with ❤️ by Guy Levy
