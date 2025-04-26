@@ -36,7 +36,6 @@ project_root/
 ├── requirements.txt
 └── README.md
 
-
 ⚙️ Technologies
 
 - ✅ Python
