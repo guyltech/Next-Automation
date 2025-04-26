@@ -59,7 +59,6 @@ pytest --alluredir=reports/
 allure serve reports/
 
 🧠 Key Concepts
-
 Page Object Model (POM) structure
 Component-based composition for reusable sections
 Base classes for common logic
