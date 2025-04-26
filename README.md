@@ -12,18 +12,18 @@ Automated UI tests for [Next.co.uk](https://www.next.co.uk/) using Python, Playw
 project_root/
 │
 ├── pages/
-│   ├── init.py
+│   ├── __init__.py
 │   ├── base_page.py
 │   ├── home_page.py
 │   ├── login_page.py
 │   ├── registration_page.py
 │   ├── search_results_page.py
 │   └── components/
-│       ├── init.py
+│       ├── __init__.py
 │       └── common_dialogs.py
 │
 ├── tests/
-│   ├── init.py
+│   ├── __init__.py
 │   ├── base_test.py
 │   ├── conftest.py
 │   ├── test_header_navigation.py
@@ -35,6 +35,7 @@ project_root/
 ├── pytest.ini
 ├── requirements.txt
 └── README.md
+
 
 ⚙️ Technologies
 
