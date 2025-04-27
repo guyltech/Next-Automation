@@ -4,6 +4,7 @@ from pages.base_page import BasePage
 class SearchResultsPage(BasePage):
 
     __PRODUCT_TITLE = "[data-testid='product_summary_title']"
+    __INVALID_SEARCH_ERROR_MSG = "[data-testid='plp-no-results-header']"
 
     def __init__(self, page:Page):
         super().__init__(page)
@@ -35,3 +36,6 @@ class SearchResultsPage(BasePage):
 
         print("")
         return True
+
+    def get_invalid_search_error_msg(self) -> str:
+        return self.inner_text(self.__INVALID_SEARCH_ERROR_MSG)

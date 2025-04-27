@@ -1,11 +1,11 @@
 import time
 from playwright.sync_api import Page
 from pages.base_page import BasePage
+from pages.components.common_dialogs import CommonDialogs
+
 
 class HomePage(BasePage):
 
-    __ACCEPT_ALL_COOKIES_BTN = "#onetrust-accept-btn-handler"
-    __CLOSE_CHANGE_COUNTRY_BTN = "[data-testid='country-selector-close-button']"
     __ACCOUNTS_ICON = "[data-testid='header-adaptive-my-account-icon-container-link']"
     __SEARCH_PRODUCT_FIELD = "#header-big-screen-search-box"
     __SEARCH_PRODUCT_BTN = "[data-testid='header-search-bar-button']"
@@ -14,17 +14,7 @@ class HomePage(BasePage):
 
     def __init__(self, page:Page):
         super().__init__(page)
-
-    def accept_all_cookies(self) -> None:
-        self.click(self.__ACCEPT_ALL_COOKIES_BTN)
-
-    # def get_country_flag(self) -> str:
-    #     pass
-    # Add test_country_flag(self):
-    #     pass
-
-    def close_change_country_dialog(self) -> None:
-        self.click(self.__CLOSE_CHANGE_COUNTRY_BTN)
+        self.common_dialogs = CommonDialogs(page)
 
     def accounts_icon_click(self) -> None:
         self.click(self.__ACCOUNTS_ICON)
@@ -54,4 +44,5 @@ class HomePage(BasePage):
         value = self.get_attribute(self.__SEARCH_PRODUCT_FIELD,"value") # value = page.locator("input").get_attribute("value")
         return (value is None) or (value == "")
 
-
+    def click_header_department(self, department, category) -> None:
+        pass
