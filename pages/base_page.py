@@ -58,3 +58,11 @@ class BasePage:
 
     def get_attribute(self, locator: str, attribute: str) -> str:
         return self.__page.locator(locator).get_attribute(attribute)
+
+    def hover(self, locator: str) -> None:
+        self.__page.locator(locator).highlight()
+        time.sleep(1)
+        self.__page.locator(locator).hover()
+
+    def first(self, locator: str) -> Locator:
+        return self.__page.locator(locator).first

@@ -5,8 +5,7 @@ from tests.base_test import BaseTest
 class TestRegistration(BaseTest):
 
     def goto_registration_page(self) -> None:
-        self.home_page.accept_all_cookies()
-        self.home_page.close_change_country_dialog()
+        self.home_page.common_dialogs.close_accept_cookies_and_country_dialog()
         self.home_page.accounts_icon_click()
         self.login_page.register_btn_click()
 

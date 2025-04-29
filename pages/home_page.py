@@ -1,5 +1,5 @@
 import time
-from playwright.sync_api import Page
+from playwright.sync_api import Page, Locator
 from pages.base_page import BasePage
 from pages.components.common_dialogs import CommonDialogs
 
@@ -11,6 +11,9 @@ class HomePage(BasePage):
     __SEARCH_PRODUCT_BTN = "[data-testid='header-search-bar-button']"
     __SEARCH_BAR_SUGGESTIONS_LIST = "[data-testid='searchBar-suggestions']>li span"
     __CLEAR_SEARCH_BTN = "[data-testid='header-search-bar-clear-text-button']"
+    __MEN_DEPARTMENT_LINK = "[title='MEN']"
+    __MEN_SUB_CATEGORY_LINKS = "#embeddedNavLinks > section:nth-child(2) > a"
+    __MEN_JACKETS_AND_COATS_CATEGORY_LINK = "[href='/shop/gender-men-productaffiliation-coatsandjackets-0']"
 
     def __init__(self, page:Page):
         super().__init__(page)
@@ -44,5 +47,33 @@ class HomePage(BasePage):
         value = self.get_attribute(self.__SEARCH_PRODUCT_FIELD,"value") # value = page.locator("input").get_attribute("value")
         return (value is None) or (value == "")
 
-    def click_header_department(self, department, category) -> None:
-        pass
+    def select_main_department_and_sub_category(self, main_department, sub_category) -> None:
+        match main_department:
+            case "Women":
+                pass
+            case "Men":
+                self.hover(self.__MEN_DEPARTMENT_LINK)
+                if sub_category:
+                    sub_category_list = self.locator(self.__MEN_SUB_CATEGORY_LINKS)
+                    self.select_sub_category(sub_category, sub_category_list)
+                else:
+                    self.click(self.__MEN_DEPARTMENT_LINK)
+                #self.click(self.first(self.__MEN_JACKETS_AND_COATS_CATEGORY_LINK)) # page.locator("").first.click()
+            case "Beauty":
+                pass
+            case _:
+                raise ValueError(f"Unsupported option: {main_department}")
+        time.sleep(5)
+
+    def select_sub_category(self, sub_category: str, sub_category_list : Locator) -> None:
+        time.sleep(2)
+        count = sub_category_list.count()
+        print(f"Men sub_category_list count: {count}")
+
+        for i in range(count):
+            sub_category_text = self.inner_text(self.nth(sub_category_list,i))  # sub_category_text = sub_category_list.nth(i).inner_text()
+                                                                                # print(sub_category_text)
+            if sub_category in sub_category_text:
+                self.click(self.nth(sub_category_list, i))  # sub_category_list.nth(i).click()
+                break
+        time.sleep(5)
