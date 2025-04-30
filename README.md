@@ -1,7 +1,7 @@
 # 🌐 Next Website - Automation Testing Project 💻
 
 
-🛠️ This project is a work in progress. More tests and improvements coming soon.
+🛠️ This project is a work in progress. More tests and improvements coming soon!
 
 
 ⭐ Automated testing project for the real shopping site [Next.co.uk](https://www.next.co.uk/) ⭐
