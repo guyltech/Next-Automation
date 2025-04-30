@@ -64,5 +64,9 @@ class BasePage:
         time.sleep(1)
         self.__page.locator(locator).hover()
 
-    def first(self, locator: str) -> Locator:
-        return self.__page.locator(locator).first
+    def first(self, locator: Union[str, Locator]) -> Locator:
+        if isinstance(locator, str): # Check if the locator is a string (CSS selector)
+            my_locator = self.__page.locator(locator) # page.locator will get str as this is the default in Playwright
+        else: # If it's already a Locator, use it as is
+            my_locator = locator
+        return my_locator.first
