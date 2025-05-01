@@ -12,8 +12,11 @@ class HomePage(BasePage):
     __SEARCH_BAR_SUGGESTIONS_LIST = "[data-testid='searchBar-suggestions']>li span"
     __CLEAR_SEARCH_BTN = "[data-testid='header-search-bar-clear-text-button']"
     __MEN_DEPARTMENT_LINK = "[title='MEN']"
-    __BABY_DEPARTMENT_LINK = ""
+    __BABY_DEPARTMENT_LINK = "[title='BABY']"
+    __BEAUTY_DEPARTMENT_LINK = "[title='BEAUTY']"
     __MEN_SUB_CATEGORY_LINKS = "[href*='gender-men']"
+    __BABY_SUB_CATEGORY_LINKS = "[href*='gender-newborn']"
+    __BEAUTY_SUB_CATEGORY_LINKS = "[href*='department-beauty']"
     __MEN_JACKETS_AND_COATS_CATEGORY_LINK = "[href='/shop/gender-men-productaffiliation-coatsandjackets-0']"
 
     def __init__(self, page:Page):
@@ -53,25 +56,24 @@ class HomePage(BasePage):
             case "Men":
                 self.hover(self.__MEN_DEPARTMENT_LINK)
                 if sub_category:
-                    # self.click(self.first(self.__MEN_JACKETS_AND_COATS_CATEGORY_LINK))
-                    # sub_category_list exist - When the locator is outside the loop – it is clicked (specify first()),
-                    # But when it is part of a list – it does not.
-                    # So we do not use the select_sub_category() method.
                     sub_category_list = self.locator(self.__MEN_SUB_CATEGORY_LINKS)
                     self.select_sub_category(sub_category, sub_category_list)
                 else:
                     self.click(self.__MEN_DEPARTMENT_LINK)
             case "Baby":
-                self.hover(self.__MEN_DEPARTMENT_LINK)
+                self.hover(self.__BABY_DEPARTMENT_LINK)
                 if sub_category:
-                    self.click(self.first(self.__MEN_JACKETS_AND_COATS_CATEGORY_LINK))
-                    # sub_category_list exist - When the locator is outside the loop – it is clicked (specify first()),
-                    # But when it is part of a list – it does not.
-                    # So we do not use the select_sub_category() method.
-                    # sub_category_list = self.locator(self.__MEN_SUB_CATEGORY_LINKS)
-                    # self.select_sub_category(sub_category, sub_category_list)
+                    sub_category_list = self.locator(self.__BABY_SUB_CATEGORY_LINKS)
+                    self.select_sub_category(sub_category, sub_category_list)
                 else:
-                    self.click(self.__MEN_DEPARTMENT_LINK)
+                    self.click(self.__BABY_DEPARTMENT_LINK)
+            case "Beauty":
+                self.hover(self.__BEAUTY_DEPARTMENT_LINK)
+                if sub_category:
+                    sub_category_list = self.locator(self.__BEAUTY_SUB_CATEGORY_LINKS)
+                    self.select_sub_category(sub_category, sub_category_list)
+                else:
+                    self.click(self.__BEAUTY_DEPARTMENT_LINK)
             case _:
                 raise ValueError(f"Unsupported option: {main_department}")
         time.sleep(5)
@@ -85,7 +87,6 @@ class HomePage(BasePage):
             if sub_category in sub_category_text:
                 print(sub_category_text)
                 first_match = self.first(self.nth(sub_category_list, i))
-                self.click(first_match)
-                # self.click(self.nth(sub_category_list, i))
+                self.click(first_match) # sub_category_list.nth(i).first.click
                 break
         time.sleep(5)
