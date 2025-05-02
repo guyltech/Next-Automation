@@ -41,6 +41,7 @@ project_root/
 │   ├── login_page.py
 │   ├── registration_page.py
 │   ├── search_results_page.py
+│   ├── sub_category_page.py
 │   └── components/
 │       ├── __init__.py
 │       └── common_dialogs.py
