@@ -4,8 +4,11 @@
 🛠️ This project is a work in progress. More tests and improvements coming soon!
 
 
-⭐ Automated testing project for the real shopping site [Next.co.uk](https://www.next.co.uk/) ⭐
+⭐ Automated testing project for the real shopping site [Next.co.uk](https://www.next.co.uk/) 🛒 ⭐
 
+<p>
+  <img src="screenshots/next_website_screenshot.png" width="70%" title="next website screenshot"  />
+</p>
 
 ## 📑 Technologies & Skills & Features
 | Technologies      | Description |
