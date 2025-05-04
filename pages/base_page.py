@@ -56,8 +56,13 @@ class BasePage:
     def url(self) -> str:
         return self.__page.url
 
-    def get_attribute(self, locator: str, attribute: str) -> str:
-        return self.__page.locator(locator).get_attribute(attribute)
+    def get_attribute(self, locator_or_selector: Union[str, Locator], attribute: str) -> str:
+        if isinstance(locator_or_selector, str):
+            locator = self.__page.locator(locator_or_selector)
+        else:
+            locator = locator_or_selector
+
+        return locator.get_attribute(attribute)
 
     def hover(self, locator: str) -> None:
         self.__page.locator(locator).highlight()

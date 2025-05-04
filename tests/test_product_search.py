@@ -4,10 +4,6 @@ from tests.base_test import BaseTest
 @pytest.mark.usefixtures("setup_page_function")
 class TestProductSearch(BaseTest):
 
-    # def close_accept_cookies_and_country_dialog(self) -> None:
-    #     self.home_page.accept_all_cookies()
-    #     self.home_page.close_change_country_dialog()
-
     # TC01: Verify the search results are displayed based on the search query 'Jeans'
     def test_search_jeans_displays_valid_results(self) -> None:
         self.home_page.common_dialogs.close_accept_cookies_and_country_dialog()

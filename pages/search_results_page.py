@@ -19,8 +19,7 @@ class SearchResultsPage(BasePage):
             return False
 
         for i in range(count):
-            product_title = self.inner_text(
-                self.nth(self.__PRODUCT_TITLE, i))  # product_title = products_list.nth(i).inner_text()
+            product_title = self.inner_text(self.nth(self.__PRODUCT_TITLE, i))  # product_title = products_list.nth(i).inner_text()
             print(f"Product title [{i}]: {product_title}")
 
             search_text_lower = search_text.lower()

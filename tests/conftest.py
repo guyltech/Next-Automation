@@ -4,6 +4,7 @@ from pages.home_page import HomePage
 from pages.login_page import LoginPage
 from pages.registration_page import RegistrationPage
 from pages.search_results_page import SearchResultsPage
+from pages.sub_category_page import SubCategoryPage
 
 
 @pytest.fixture(scope="class")
@@ -15,6 +16,7 @@ def setup_page_class(request, browser):
     request.cls.login_page = LoginPage(request.cls.page)
     request.cls.registration_page = RegistrationPage(request.cls.page)
     request.cls.search_results_page = SearchResultsPage(request.cls.page)
+    request.cls.sub_category_page = SubCategoryPage(request.cls.page)
     yield
     request.cls.page.close()
     browser.close()
@@ -28,3 +30,4 @@ def setup_page_function(request, page: Page):
     request.cls.login_page = LoginPage(page)
     request.cls.registration_page = RegistrationPage(page)
     request.cls.search_results_page = SearchResultsPage(page)
+    request.cls.sub_category_page = SubCategoryPage(page)

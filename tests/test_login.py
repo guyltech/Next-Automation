@@ -23,5 +23,4 @@ class TestLogin(BaseTest):
         self.login_page.fill_login_info("usernext391@gmail.com", "usernext1!!")
         self.login_page.continue_shopping_btn_click()
         assert "account/MyAccount/OrderTracking" in self.login_page.url()
-        #print(self.login_page.url())
 
