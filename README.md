@@ -6,8 +6,6 @@
 
 ⭐ Automated testing project for the real shopping site [Next.co.uk](https://www.next.co.uk/) 🛒 ⭐
 
-<iframe scrolling='no' frameborder='0' style='width: 1902px; height: 1070px; border:0;' src='https://app.screencast.com/9JWRA6SuiPkIR/e' allowfullscreen></iframe>
-
 <p>
   <img src="screenshots/next_website_screenshot.png" width="70%" title="next website screenshot"  />
 </p>
