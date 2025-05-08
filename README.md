@@ -29,8 +29,11 @@
 - Sorting and filtering on search results
 
 
-## 🚀 Setup & Run
-Instructions coming soon...
+## 🚀 Getting Started
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/guyltech/Next-Automation.git
+    ```
 
 
 ## 📁 Project Structure
